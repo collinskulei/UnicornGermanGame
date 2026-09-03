@@ -11,6 +11,7 @@ create table if not exists public.profiles (
   id uuid primary key references auth.users (id) on delete cascade,
   username text not null default 'Player',
   avatar_url text,
+  phone text,
   xp integer not null default 0,
   coins integer not null default 0,
   current_streak integer not null default 0,
@@ -18,6 +19,11 @@ create table if not exists public.profiles (
   last_played_date date,
   created_at timestamptz not null default now()
 );
+
+-- Re-running this file against a project where profiles already existed
+-- (e.g. before phone-based login was added) — this adds the column
+-- without touching existing rows.
+alter table public.profiles add column if not exists phone text;
 
 alter table public.profiles enable row level security;
 
@@ -40,18 +46,22 @@ create policy "players can insert their own profile"
   to authenticated
   with check (auth.uid() = id);
 
--- Auto-create a profile row the moment someone signs in with Google.
+-- Auto-create a profile row the moment someone signs up. Players log in
+-- with just an email + phone number (their phone number doubles as the
+-- Supabase Auth password), so we pull the phone back out of signup
+-- metadata here.
 create or replace function public.handle_new_user()
 returns trigger
 language plpgsql
 security definer set search_path = public
 as $$
 begin
-  insert into public.profiles (id, username, avatar_url)
+  insert into public.profiles (id, username, avatar_url, phone)
   values (
     new.id,
     coalesce(new.raw_user_meta_data ->> 'full_name', new.raw_user_meta_data ->> 'name', split_part(new.email, '@', 1)),
-    new.raw_user_meta_data ->> 'avatar_url'
+    new.raw_user_meta_data ->> 'avatar_url',
+    new.raw_user_meta_data ->> 'phone'
   )
   on conflict (id) do nothing;
   return new;

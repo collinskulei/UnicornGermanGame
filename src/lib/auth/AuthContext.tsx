@@ -12,11 +12,16 @@ import type { User } from "@supabase/supabase-js";
 import { createClient } from "@/lib/supabase/client";
 import type { PlayerProfile } from "@/types";
 
+export type ContinueResult =
+  | { status: "signed_in" }
+  | { status: "check_email" }
+  | { status: "error"; message: string };
+
 interface AuthContextValue {
   user: User | null;
   profile: PlayerProfile | null;
   loading: boolean;
-  signInWithGoogle: () => Promise<void>;
+  continueWithEmailPhone: (email: string, phone: string) => Promise<ContinueResult>;
   signOut: () => Promise<void>;
   refreshProfile: () => Promise<void>;
 }
@@ -77,13 +82,47 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     };
   }, [supabase, fetchProfile]);
 
-  const signInWithGoogle = useCallback(async () => {
-    const redirectTo = `${window.location.origin}/auth/callback`;
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: { redirectTo },
-    });
-  }, [supabase]);
+  // No real "password" here — the player's phone number stands in for
+  // one, so returning players never have to remember a separate secret.
+  // We try signing in first; "invalid credentials" on an unseen email
+  // means it's a new player, so we fall back to creating the account.
+  const continueWithEmailPhone = useCallback(
+    async (email: string, phone: string): Promise<ContinueResult> => {
+      const normalizedEmail = email.trim().toLowerCase();
+      const normalizedPhone = phone.replace(/\s+/g, "");
+
+      const { error: signInError } = await supabase.auth.signInWithPassword({
+        email: normalizedEmail,
+        password: normalizedPhone,
+      });
+      if (!signInError) return { status: "signed_in" };
+
+      if (!signInError.message.toLowerCase().includes("invalid login credentials")) {
+        return { status: "error", message: signInError.message };
+      }
+
+      const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+        email: normalizedEmail,
+        password: normalizedPhone,
+        options: { data: { phone: normalizedPhone } },
+      });
+      if (signUpError) return { status: "error", message: signUpError.message };
+
+      // Supabase returns an empty `identities` array when the email
+      // already belongs to a confirmed account — our phone number just
+      // didn't match theirs.
+      if (signUpData.user && signUpData.user.identities?.length === 0) {
+        return {
+          status: "error",
+          message: "That phone number doesn't match this email. Please try again.",
+        };
+      }
+
+      if (signUpData.session) return { status: "signed_in" };
+      return { status: "check_email" };
+    },
+    [supabase]
+  );
 
   const signOut = useCallback(async () => {
     await supabase.auth.signOut();
@@ -94,8 +133,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [user, fetchProfile]);
 
   const value = useMemo(
-    () => ({ user, profile, loading, signInWithGoogle, signOut, refreshProfile }),
-    [user, profile, loading, signInWithGoogle, signOut, refreshProfile]
+    () => ({ user, profile, loading, continueWithEmailPhone, signOut, refreshProfile }),
+    [user, profile, loading, continueWithEmailPhone, signOut, refreshProfile]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

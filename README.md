@@ -1,13 +1,13 @@
 # 🦄 Unicorn Language Center — German Crossword Quest
 
-A gamified crossword app for young adults in Kenya learning German. English clues, German answers, 5 CEFR-aligned difficulty levels (Foal → Alicorn), Google sign-in, XP/coins/streaks/achievements, and per-level leaderboards ranked by speed and accuracy.
+A gamified crossword app for young adults in Kenya learning German. English clues, German answers, 5 CEFR-aligned difficulty levels (Foal → Alicorn), simple email + phone number sign-in (no password to remember), XP/coins/streaks/achievements, and per-level leaderboards ranked by speed and accuracy.
 
 See [`DESIGN_SYSTEM.md`](./DESIGN_SYSTEM.md) for the full visual/gamification design language.
 
 ## Stack
 
 - **Next.js 16** (App Router, TypeScript, Tailwind CSS v4)
-- **Supabase** — Google OAuth, Postgres (profiles, scores, achievements), leaderboard views
+- **Supabase** — Auth (email + phone, no OAuth needed), Postgres (profiles, scores, achievements), leaderboard views
 - **Framer Motion** + **canvas-confetti** for reward "juice"
 - **Zustand** for lightweight client UI state (toasts, celebration modals)
 
@@ -25,13 +25,16 @@ npm install
 2. In **Project Settings → API**, copy the **Project URL** and **anon public key**.
 3. Open the SQL Editor and run the contents of [`supabase/schema.sql`](./supabase/schema.sql) once. This creates the `profiles`, `puzzle_attempts`, and `user_achievements` tables, row-level security policies, the new-user trigger, and the leaderboard views.
 
-### 3. Set up Google OAuth
+### 3. Turn off email confirmation (recommended)
 
-1. In the [Google Cloud Console](https://console.cloud.google.com/), create (or reuse) a project → **APIs & Services → Credentials → Create Credentials → OAuth client ID** → Web application.
-2. Add an **Authorized redirect URI**: `https://<your-project-ref>.supabase.co/auth/v1/callback`.
-3. Copy the generated **Client ID** and **Client Secret**.
-4. In your Supabase dashboard: **Authentication → Providers → Google** → paste the Client ID/Secret and enable the provider.
-5. In **Authentication → URL Configuration**, add your app's URL (e.g. `http://localhost:3000` for local dev, plus your production domain) to the **Redirect URLs** allow-list — the app redirects to `/auth/callback` after sign-in.
+Sign-in uses Supabase's built-in email/password auth, except there's no password field shown — the player's **phone number is used as the password** under the hood, so returning players never have to remember a separate secret.
+
+By default, new Supabase projects require players to click a confirmation link in their email before they can log in, which adds friction back in. To keep sign-up truly one-step:
+
+1. In your Supabase dashboard: **Authentication → Sign In / Providers → Email**.
+2. Turn **Confirm email** off.
+
+(If you'd rather keep email confirmation on, that's fine too — the app already handles it: after signing up, players see a "check your email" message and can log in normally once they've clicked the link.)
 
 ### 4. Configure environment variables
 
@@ -47,7 +50,7 @@ Fill in `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` from step
 npm run dev
 ```
 
-Visit `http://localhost:3000` and sign in with Google.
+Visit `http://localhost:3000` and play — enter any email and phone number to create an account, or the same pair again to log back in.
 
 ## Puzzle content
 
@@ -94,4 +97,4 @@ src/
 
 ## Deploying
 
-Any Next.js host works (Vercel is the path of least resistance). Set the same environment variables from `.env.local` in your host's project settings, and add your production domain to Supabase's **Redirect URLs** and to the Google OAuth client's **Authorized redirect URIs**.
+Any Next.js host works (Vercel is the path of least resistance). Set the same environment variables from `.env.local` in your host's project settings.
