@@ -1,0 +1,444 @@
+{
+  "levels": [
+    {
+      "id": "foal",
+      "levelNumber": 1,
+      "cefr": "A1",
+      "displayName": "Foal",
+      "puzzles": [
+        {
+          "id": "foal-1",
+          "theme": "Family & People",
+          "words": [
+            { "answer": "MUTTER", "clue": "The German word for 'mother'." },
+            { "answer": "VATER", "clue": "The German word for 'father'." },
+            { "answer": "BRUDER", "clue": "The German word for 'brother'." },
+            { "answer": "SCHWESTER", "clue": "The German word for 'sister'." },
+            { "answer": "OMA", "clue": "An informal word for 'grandma'." },
+            { "answer": "OPA", "clue": "An informal word for 'grandpa'." },
+            { "answer": "SOHN", "clue": "The German word for 'son'." },
+            { "answer": "TOCHTER", "clue": "The German word for 'daughter'." },
+            { "answer": "FRAU", "clue": "The German word for 'woman' or 'wife'." },
+            { "answer": "MANN", "clue": "The German word for 'man' or 'husband'." }
+          ]
+        },
+        {
+          "id": "foal-2",
+          "theme": "Numbers 1-10",
+          "words": [
+            { "answer": "EINS", "clue": "The number 1." },
+            { "answer": "ZWEI", "clue": "The number 2." },
+            { "answer": "DREI", "clue": "The number 3." },
+            { "answer": "VIER", "clue": "The number 4." },
+            { "answer": "FÜNF", "clue": "The number 5." },
+            { "answer": "SECHS", "clue": "The number 6." },
+            { "answer": "SIEBEN", "clue": "The number 7." },
+            { "answer": "ACHT", "clue": "The number 8." },
+            { "answer": "NEUN", "clue": "The number 9." },
+            { "answer": "ZEHN", "clue": "The number 10." }
+          ]
+        },
+        {
+          "id": "foal-3",
+          "theme": "Colors",
+          "words": [
+            { "answer": "ROT", "clue": "The color of a tomato." },
+            { "answer": "BLAU", "clue": "The color of a clear sky." },
+            { "answer": "GELB", "clue": "The color of a banana." },
+            { "answer": "GRÜN", "clue": "The color of grass." },
+            { "answer": "SCHWARZ", "clue": "The color of the night sky." },
+            { "answer": "WEIß", "clue": "The color of fresh snow." },
+            { "answer": "ORANGE", "clue": "The color you get by mixing red and yellow." },
+            { "answer": "LILA", "clue": "The color of lavender flowers, made by mixing red and blue." },
+            { "answer": "BRAUN", "clue": "The color of chocolate." },
+            { "answer": "ROSA", "clue": "A light pink color." }
+          ]
+        },
+        {
+          "id": "foal-4",
+          "theme": "Days & Time",
+          "words": [
+            { "answer": "MONTAG", "clue": "The first day of the German week: Monday." },
+            { "answer": "DIENSTAG", "clue": "The day after Monday: Tuesday." },
+            { "answer": "MITTWOCH", "clue": "The middle of the week: Wednesday." },
+            { "answer": "DONNERSTAG", "clue": "The day before Friday: Thursday." },
+            { "answer": "FREITAG", "clue": "The last workday of the week: Friday." },
+            { "answer": "SAMSTAG", "clue": "The first day of the weekend: Saturday." },
+            { "answer": "SONNTAG", "clue": "The last day of the weekend: Sunday." },
+            { "answer": "WOCHE", "clue": "A period of seven days." },
+            { "answer": "TAG", "clue": "A single period of 24 hours." },
+            { "answer": "JAHR", "clue": "A period of twelve months." }
+          ]
+        },
+        {
+          "id": "foal-5",
+          "theme": "Animals & Home",
+          "words": [
+            { "answer": "HAUS", "clue": "The German word for 'house'." },
+            { "answer": "HUND", "clue": "The German word for 'dog'." },
+            { "answer": "KATZE", "clue": "The German word for 'cat'." },
+            { "answer": "WASSER", "clue": "The German word for 'water'." },
+            { "answer": "BROT", "clue": "The German word for 'bread'." },
+            { "answer": "BUCH", "clue": "The German word for 'book'." },
+            { "answer": "TISCH", "clue": "The German word for 'table'." },
+            { "answer": "STUHL", "clue": "The German word for 'chair'." },
+            { "answer": "BETT", "clue": "The German word for 'bed'." },
+            { "answer": "FISCH", "clue": "The German word for 'fish'." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "colt",
+      "levelNumber": 2,
+      "cefr": "A2",
+      "displayName": "Colt",
+      "puzzles": [
+        {
+          "id": "colt-1",
+          "theme": "Food & Drink",
+          "words": [
+            { "answer": "APFEL", "clue": "A round, crunchy fruit that can be red or green." },
+            { "answer": "BANANE", "clue": "A long yellow fruit." },
+            { "answer": "KAFFEE", "clue": "A hot drink many people need in the morning." },
+            { "answer": "TEE", "clue": "A hot drink made by steeping leaves in water." },
+            { "answer": "MILCH", "clue": "A white drink that comes from cows." },
+            { "answer": "KÄSE", "clue": "A dairy food often eaten on bread or pizza." },
+            { "answer": "EIER", "clue": "What chickens lay; often boiled or fried for breakfast (plural)." },
+            { "answer": "ZUCKER", "clue": "A sweet substance added to coffee or tea." },
+            { "answer": "SALZ", "clue": "A white substance used to season food." },
+            { "answer": "GEMÜSE", "clue": "A general word for carrots, potatoes, and other plant-based foods." }
+          ]
+        },
+        {
+          "id": "colt-2",
+          "theme": "Clothing",
+          "words": [
+            { "answer": "HEMD", "clue": "A button-up shirt, often worn with a tie." },
+            { "answer": "HOSE", "clue": "The German word for 'trousers/pants'." },
+            { "answer": "JACKE", "clue": "A piece of clothing you wear outside to stay warm." },
+            { "answer": "SCHUHE", "clue": "What you wear on your feet (plural)." },
+            { "answer": "MÜTZE", "clue": "A warm knitted hat." },
+            { "answer": "ROCK", "clue": "A piece of clothing worn by women, not trousers." },
+            { "answer": "PULLOVER", "clue": "A warm knitted top, also called a sweater." },
+            { "answer": "KLEID", "clue": "A one-piece garment worn by women." },
+            { "answer": "SOCKEN", "clue": "What you wear on your feet under your shoes (plural)." },
+            { "answer": "GÜRTEL", "clue": "An accessory worn around the waist to hold up trousers." }
+          ]
+        },
+        {
+          "id": "colt-3",
+          "theme": "Weather",
+          "words": [
+            { "answer": "SONNE", "clue": "The star that gives us light and warmth in the sky." },
+            { "answer": "REGEN", "clue": "Water falling from clouds." },
+            { "answer": "WIND", "clue": "Moving air." },
+            { "answer": "SCHNEE", "clue": "White, cold precipitation in winter." },
+            { "answer": "WOLKE", "clue": "A white or grey shape floating in the sky." },
+            { "answer": "NEBEL", "clue": "Thick fog that makes it hard to see." },
+            { "answer": "GEWITTER", "clue": "A storm with thunder and lightning." },
+            { "answer": "KALT", "clue": "The opposite of 'warm'." },
+            { "answer": "WARM", "clue": "The opposite of 'cold'." },
+            { "answer": "HEIß", "clue": "Very hot, like the weather in summer." }
+          ]
+        },
+        {
+          "id": "colt-4",
+          "theme": "Shopping & Travel",
+          "words": [
+            { "answer": "GELD", "clue": "What you use to pay for things." },
+            { "answer": "PREIS", "clue": "The cost of an item." },
+            { "answer": "MARKT", "clue": "A place where vendors sell fruit, vegetables, and goods." },
+            { "answer": "KOFFER", "clue": "A case used to pack clothes for a trip." },
+            { "answer": "FAHRKARTE", "clue": "A ticket you buy to travel by train or bus." },
+            { "answer": "BAHNHOF", "clue": "The building where you catch a train." },
+            { "answer": "FLUGZEUG", "clue": "A machine that flies you across countries." },
+            { "answer": "HOTEL", "clue": "A place where travelers pay to sleep for the night." },
+            { "answer": "REISE", "clue": "A trip or journey." },
+            { "answer": "GEPÄCK", "clue": "Bags and suitcases you take on a trip." }
+          ]
+        },
+        {
+          "id": "colt-5",
+          "theme": "Adjectives & Everyday Verbs",
+          "words": [
+            { "answer": "GROß", "clue": "The opposite of 'klein' (small)." },
+            { "answer": "KLEIN", "clue": "The opposite of 'groß' (big)." },
+            { "answer": "SCHNELL", "clue": "The opposite of 'langsam' (slow)." },
+            { "answer": "LANGSAM", "clue": "The opposite of 'schnell' (fast)." },
+            { "answer": "SPIELEN", "clue": "Infinitive verb: to play." },
+            { "answer": "KAUFEN", "clue": "Infinitive verb: to buy." },
+            { "answer": "WOHNEN", "clue": "Infinitive verb: to live (reside somewhere)." },
+            { "answer": "ARBEITEN", "clue": "Infinitive verb: to work." },
+            { "answer": "LERNEN", "clue": "Infinitive verb: to learn or study." },
+            { "answer": "MACHEN", "clue": "Infinitive verb: to do or make." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stallion",
+      "levelNumber": 3,
+      "cefr": "B1",
+      "displayName": "Stallion",
+      "puzzles": [
+        {
+          "id": "stallion-1",
+          "theme": "Work & School",
+          "words": [
+            { "answer": "BERUF", "clue": "A person's job or profession." },
+            { "answer": "SCHULE", "clue": "A place where children go to learn." },
+            { "answer": "LEHRER", "clue": "A person who teaches at a school." },
+            { "answer": "SCHÜLER", "clue": "A person who attends school to learn." },
+            { "answer": "PRÜFUNG", "clue": "A test that checks what you have learned." },
+            { "answer": "ZEUGNIS", "clue": "The official report card given at the end of a term." },
+            { "answer": "STUNDENPLAN", "clue": "A timetable showing your classes for the week." },
+            { "answer": "KOLLEGE", "clue": "A person you work with." },
+            { "answer": "BÜRO", "clue": "A room where office work is done." },
+            { "answer": "CHEF", "clue": "The person in charge at work; your boss." }
+          ]
+        },
+        {
+          "id": "stallion-2",
+          "theme": "Feelings & Emotions",
+          "words": [
+            { "answer": "FREUDE", "clue": "The feeling of happiness or joy." },
+            { "answer": "TRAURIG", "clue": "Adjective describing how you feel when you cry." },
+            { "answer": "WÜTEND", "clue": "Adjective for feeling very angry." },
+            { "answer": "ANGST", "clue": "The feeling of fear." },
+            { "answer": "LIEBE", "clue": "A deep feeling of affection; the noun for 'love'." },
+            { "answer": "EIFERSUCHT", "clue": "The feeling you get when you envy someone's partner or success." },
+            { "answer": "STOLZ", "clue": "The feeling of pride." },
+            { "answer": "NERVÖS", "clue": "Adjective describing how you feel before an exam." },
+            { "answer": "GLÜCKLICH", "clue": "Adjective meaning 'happy'." },
+            { "answer": "EINSAM", "clue": "Adjective describing the feeling of being alone and wishing for company." }
+          ]
+        },
+        {
+          "id": "stallion-3",
+          "theme": "Household Chores",
+          "words": [
+            { "answer": "KÜCHE", "clue": "The room where you cook." },
+            { "answer": "WOHNZIMMER", "clue": "The room where a family relaxes and watches TV." },
+            { "answer": "BADEZIMMER", "clue": "The room with the shower and toilet." },
+            { "answer": "STAUBSAUGEN", "clue": "Infinitive verb: to vacuum the floor." },
+            { "answer": "WÄSCHE", "clue": "Dirty clothes waiting to be washed." },
+            { "answer": "BÜGELN", "clue": "Infinitive verb: to iron clothes." },
+            { "answer": "PUTZEN", "clue": "Infinitive verb: to clean." },
+            { "answer": "KOCHEN", "clue": "Infinitive verb: to cook." },
+            { "answer": "SPÜLEN", "clue": "Infinitive verb: to wash the dishes." },
+            { "answer": "KEHREN", "clue": "Infinitive verb: to sweep the floor." }
+          ]
+        },
+        {
+          "id": "stallion-4",
+          "theme": "Health & Body",
+          "words": [
+            { "answer": "KOPF", "clue": "The part of your body that contains your brain." },
+            { "answer": "ARM", "clue": "The body part between your shoulder and your hand." },
+            { "answer": "BEIN", "clue": "The body part you use to walk." },
+            { "answer": "HERZ", "clue": "The organ that pumps blood." },
+            { "answer": "MAGEN", "clue": "The organ where food goes to be digested." },
+            { "answer": "RÜCKEN", "clue": "The back part of your body." },
+            { "answer": "SCHULTER", "clue": "The joint connecting your arm to your body." },
+            { "answer": "FIEBER", "clue": "A raised body temperature when you are sick." },
+            { "answer": "SCHMERZEN", "clue": "The word for 'pain' (plural)." },
+            { "answer": "ARZT", "clue": "A person you visit when you are sick; a doctor." }
+          ]
+        },
+        {
+          "id": "stallion-5",
+          "theme": "Hobbies & Past Tense (Perfekt)",
+          "words": [
+            { "answer": "GESPIELT", "clue": "Perfekt form: 'er hat ___' (played)." },
+            { "answer": "GEKAUFT", "clue": "Perfekt form: 'sie hat ___' (bought)." },
+            { "answer": "GEMACHT", "clue": "Perfekt form: 'ich habe ___' (done/made)." },
+            { "answer": "GELERNT", "clue": "Perfekt form: 'wir haben ___' (learned)." },
+            { "answer": "GEARBEITET", "clue": "Perfekt form: 'er hat ___' (worked)." },
+            { "answer": "GEKOCHT", "clue": "Perfekt form: 'ich habe ___' (cooked)." },
+            { "answer": "GELESEN", "clue": "Perfekt form: 'sie hat ___' (read) — irregular past participle of lesen." },
+            { "answer": "GESEHEN", "clue": "Perfekt form: 'ich habe ___' (seen) — irregular past participle of sehen." },
+            { "answer": "GEFAHREN", "clue": "Perfekt form: 'er ist ___' (driven/traveled) — irregular past participle of fahren." },
+            { "answer": "GESCHRIEBEN", "clue": "Perfekt form: 'sie hat ___' (written) — irregular past participle of schreiben." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pegasus",
+      "levelNumber": 4,
+      "cefr": "B2",
+      "displayName": "Pegasus",
+      "puzzles": [
+        {
+          "id": "pegasus-1",
+          "theme": "Opinions & Debate",
+          "words": [
+            { "answer": "MEINUNG", "clue": "A personal view or opinion on a topic." },
+            { "answer": "ANSICHT", "clue": "A point of view; another word for opinion." },
+            { "answer": "STANDPUNKT", "clue": "The position someone takes in a discussion; their 'point of view'." },
+            { "answer": "ARGUMENT", "clue": "A reason given to support a position in a debate." },
+            { "answer": "BEHAUPTEN", "clue": "Infinitive verb: to claim or assert something." },
+            { "answer": "ÜBERZEUGEN", "clue": "Infinitive verb: to convince someone." },
+            { "answer": "ZWEIFEL", "clue": "A feeling of uncertainty; doubt." },
+            { "answer": "VORTEIL", "clue": "A benefit or advantage." },
+            { "answer": "NACHTEIL", "clue": "A drawback or disadvantage." },
+            { "answer": "ZUSTIMMEN", "clue": "Infinitive verb: to agree with someone." }
+          ]
+        },
+        {
+          "id": "pegasus-2",
+          "theme": "Environment & Nature",
+          "words": [
+            { "answer": "UMWELT", "clue": "The natural world around us, including air, water, and land." },
+            { "answer": "KLIMAWANDEL", "clue": "The long-term change in global weather patterns caused by human activity." },
+            { "answer": "MÜLL", "clue": "Waste or garbage that gets thrown away." },
+            { "answer": "RECYCLING", "clue": "The process of turning waste into reusable material." },
+            { "answer": "ENERGIE", "clue": "The power needed to run machines and light homes." },
+            { "answer": "PFLANZE", "clue": "A living organism that grows in soil and needs sunlight." },
+            { "answer": "LUFT", "clue": "The mixture of gases we breathe." },
+            { "answer": "BODEN", "clue": "The ground or soil beneath our feet." },
+            { "answer": "SCHADSTOFF", "clue": "A substance that pollutes and harms the environment." },
+            { "answer": "NATURSCHUTZ", "clue": "Organized efforts to protect wildlife and natural habitats." }
+          ]
+        },
+        {
+          "id": "pegasus-3",
+          "theme": "Technology & Media",
+          "words": [
+            { "answer": "COMPUTER", "clue": "An electronic device used for processing data." },
+            { "answer": "INTERNET", "clue": "The global network that connects computers worldwide." },
+            { "answer": "SMARTPHONE", "clue": "A mobile phone that also functions like a small computer." },
+            { "answer": "BILDSCHIRM", "clue": "The screen of a computer or television." },
+            { "answer": "TASTATUR", "clue": "The set of keys used to type on a computer." },
+            { "answer": "SOFTWARE", "clue": "Programs that run on a computer, as opposed to hardware." },
+            { "answer": "DATENSCHUTZ", "clue": "Rules and practices that protect people's personal information online." },
+            { "answer": "NACHRICHT", "clue": "A message or piece of news." },
+            { "answer": "WERBUNG", "clue": "Content designed to promote a product; advertising." },
+            { "answer": "ANWENDUNG", "clue": "A program on a smartphone or computer, also called an 'app'." }
+          ]
+        },
+        {
+          "id": "pegasus-4",
+          "theme": "Society",
+          "words": [
+            { "answer": "BEVÖLKERUNG", "clue": "All the people living in a country or area." },
+            { "answer": "KULTUR", "clue": "The customs, arts, and shared values of a group of people." },
+            { "answer": "TRADITION", "clue": "A custom passed down through generations." },
+            { "answer": "GLEICHHEIT", "clue": "The state of being equal in rights and status." },
+            { "answer": "GERECHT", "clue": "Adjective meaning 'fair' or 'just'." },
+            { "answer": "FREIHEIT", "clue": "The state of being free." },
+            { "answer": "PFLICHT", "clue": "A duty or obligation someone must fulfil." },
+            { "answer": "RECHT", "clue": "A legal entitlement; also the word for 'law' in general." },
+            { "answer": "GESETZ", "clue": "A rule made official by a government; a law." },
+            { "answer": "GEMEINDE", "clue": "A local community or municipality." }
+          ]
+        },
+        {
+          "id": "pegasus-5",
+          "theme": "Education System",
+          "words": [
+            { "answer": "UNIVERSITÄT", "clue": "A higher-education institution where students earn degrees." },
+            { "answer": "STUDIUM", "clue": "The course of study a student follows at a university." },
+            { "answer": "VORLESUNG", "clue": "A formal talk given by a professor to students; a lecture." },
+            { "answer": "ABSCHLUSS", "clue": "The qualification earned when finishing a course of study." },
+            { "answer": "STIPENDIUM", "clue": "Money awarded to a student to help pay for their studies." },
+            { "answer": "AUSBILDUNG", "clue": "Structured vocational training that combines work and study." },
+            { "answer": "STUDIENFACH", "clue": "The main subject a university student focuses on." },
+            { "answer": "SEMESTER", "clue": "One half of the academic year." },
+            { "answer": "PRAKTIKUM", "clue": "A period of practical work experience, often unpaid, during training." },
+            { "answer": "NOTE", "clue": "A mark given to grade a student's performance." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alicorn",
+      "levelNumber": 5,
+      "cefr": "C1",
+      "displayName": "Alicorn",
+      "puzzles": [
+        {
+          "id": "alicorn-1",
+          "theme": "Abstract Concepts",
+          "words": [
+            { "answer": "WAHRNEHMUNG", "clue": "The mental process of becoming aware of something through the senses; perception." },
+            { "answer": "BEWUSSTSEIN", "clue": "The state of being awake and aware of one's surroundings; consciousness." },
+            { "answer": "ERKENNTNIS", "clue": "A piece of knowledge or insight gained through understanding." },
+            { "answer": "WIDERSPRUCH", "clue": "A statement that contradicts another; a logical conflict." },
+            { "answer": "URSACHE", "clue": "The reason something happens; a cause." },
+            { "answer": "WIRKUNG", "clue": "The result produced by a cause; an effect." },
+            { "answer": "ANNAHME", "clue": "Something accepted as true without proof; an assumption." },
+            { "answer": "VERMUTUNG", "clue": "An educated guess; a conjecture." },
+            { "answer": "BEGRIFF", "clue": "An abstract idea represented by a word; a concept." },
+            { "answer": "EINSICHT", "clue": "A deep and clear understanding of a complex matter." }
+          ]
+        },
+        {
+          "id": "alicorn-2",
+          "theme": "Formal & Academic Register",
+          "words": [
+            { "answer": "ERÖRTERN", "clue": "Infinitive verb: to discuss a topic thoroughly, weighing different sides." },
+            { "answer": "BETONEN", "clue": "Infinitive verb: to emphasize or stress a point." },
+            { "answer": "WIDERLEGEN", "clue": "Infinitive verb: to prove an argument wrong; to refute it." },
+            { "answer": "BEFÜRWORTEN", "clue": "Infinitive verb: to speak in favor of something; to advocate for it." },
+            { "answer": "ABLEHNEN", "clue": "Infinitive verb: to reject or turn down a proposal." },
+            { "answer": "BEACHTEN", "clue": "Infinitive verb: to take something into consideration." },
+            { "answer": "ANALYSIEREN", "clue": "Infinitive verb: to examine something in careful, methodical detail." },
+            { "answer": "DEUTEN", "clue": "Infinitive verb: to interpret the meaning of something." },
+            { "answer": "ZUTREFFEND", "clue": "Adjective meaning 'accurate' or 'applicable' to a situation." },
+            { "answer": "PLAUSIBEL", "clue": "Adjective describing an explanation that seems reasonable and believable." }
+          ]
+        },
+        {
+          "id": "alicorn-3",
+          "theme": "Precise Synonyms",
+          "words": [
+            { "answer": "GERINGFÜGIG", "clue": "Adjective meaning 'minor' or 'so slight as to be almost negligible'." },
+            { "answer": "BEACHTLICH", "clue": "Adjective meaning 'considerable' or 'noteworthy' in size or degree." },
+            { "answer": "UNABDINGBAR", "clue": "Adjective meaning 'absolutely essential'; indispensable." },
+            { "answer": "MAßGEBLICH", "clue": "Adjective meaning 'decisive' or 'authoritative' in determining an outcome." },
+            { "answer": "UMSTRITTEN", "clue": "Adjective describing a topic that provokes strong disagreement; controversial." },
+            { "answer": "GRAVIEREND", "clue": "Adjective meaning 'serious' or 'grave', used for severe problems." },
+            { "answer": "EINDEUTIG", "clue": "Adjective meaning 'unambiguous' or 'crystal clear'." },
+            { "answer": "FRAGWÜRDIG", "clue": "Adjective meaning 'questionable' or 'dubious'." },
+            { "answer": "BEGREIFLICH", "clue": "Adjective meaning 'understandable' or 'comprehensible'." },
+            { "answer": "OFFENKUNDIG", "clue": "Adjective meaning 'obvious' or 'evident to everyone'." }
+          ]
+        },
+        {
+          "id": "alicorn-4",
+          "theme": "Compound Nouns",
+          "words": [
+            { "answer": "ZEITGEIST", "clue": "The defining spirit or mood of a particular period in history." },
+            { "answer": "GRUNDRECHT", "clue": "A fundamental right guaranteed by a constitution." },
+            { "answer": "MINDERHEIT", "clue": "A smaller group within a larger population; a minority." },
+            { "answer": "WIDERSTAND", "clue": "Organized opposition to an authority or force." },
+            { "answer": "WELTBILD", "clue": "A person's overall view of the world and how it works." },
+            { "answer": "VORURTEIL", "clue": "A preconceived, often unfair opinion formed without full knowledge; prejudice." },
+            { "answer": "ÜBERBLICK", "clue": "A general summary or overview of a subject." },
+            { "answer": "HINTERGRUND", "clue": "The context or background behind a situation." },
+            { "answer": "AUFSCHWUNG", "clue": "A period of economic growth or upswing." },
+            { "answer": "ENTWICKLUNG", "clue": "The gradual process of growth or development." }
+          ]
+        },
+        {
+          "id": "alicorn-5",
+          "theme": "Advanced Society & Ethics",
+          "words": [
+            { "answer": "ETHIK", "clue": "The branch of study concerned with what is morally right and wrong." },
+            { "answer": "MORAL", "clue": "A set of principles concerning right and wrong behavior." },
+            { "answer": "IDENTITÄT", "clue": "The set of characteristics that define who a person or group is." },
+            { "answer": "TOLERANZ", "clue": "The willingness to accept beliefs or behavior different from one's own." },
+            { "answer": "VIELFALT", "clue": "The state of being diverse; variety." },
+            { "answer": "SOLIDARITÄT", "clue": "Mutual support within a group, especially in difficult times." },
+            { "answer": "INTEGRATION", "clue": "The process by which people from different backgrounds become part of a community." },
+            { "answer": "NACHHALTIG", "clue": "Adjective meaning 'sustainable', causing little long-term harm to the environment." },
+            { "answer": "WELTOFFEN", "clue": "Adjective describing someone open-minded and receptive to other cultures." },
+            { "answer": "URTEIL", "clue": "A formal decision or judgment, e.g. by a court or a critic." }
+          ]
+        }
+      ]
+    }
+  ]
+}
