@@ -12,10 +12,7 @@ _Last updated: 2026-09-09_
 ## Open action items
 
 1. **Vercel deployment is failing.** Add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` as environment variables in the Vercel project (Settings → Environment Variables, for Production at minimum), then redeploy. Local build/dev already works fine with these set in `.env.local`.
-2. **Crossword redesign is pending.** The current auto-generated grids (`scripts/generate-puzzles.mjs`) came out sparser/more irregular than a typical dense crossword — lots of blocked cells, wide bounding boxes for only 10 words. Needs a decision on direction before un-hiding `/play`:
-   - Tighten the grid-generation heuristic (favor more intersections, smaller bounding box), or
-   - Rework the puzzle format entirely, or
-   - Other feedback on what specifically "didn't come as needed."
+2. **Crossword redesign is pending.** The current auto-generated grids (`scripts/generate-puzzles.mjs`) came out sparser/more irregular than a typical dense crossword — lots of blocked cells, wide bounding boxes for only 10 words. See `GAME_MECHANICS_IDEAS.md` for a brainstormed shortlist of possible replacement/supplement mechanics (swipe-to-match, der/die/das sort, etc.) plus progression, retention, and social layers to build on top of whichever core loop is picked. Needs a decision on direction before un-hiding `/play`.
 
 ## Reference docs
 
