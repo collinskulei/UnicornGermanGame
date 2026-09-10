@@ -50,7 +50,7 @@ export function SwipeCard({ card, onResolved }: Props) {
       </motion.div>
       <motion.div
         style={{ opacity: noMatchOpacity }}
-        className="absolute left-5 top-5 -rotate-12 rounded-full border-4 border-unicorn-blue px-3 py-1 font-display text-lg font-extrabold text-unicorn-blue"
+        className="absolute left-5 top-5 -rotate-12 rounded-full border-4 border-error px-3 py-1 font-display text-lg font-extrabold text-error"
       >
         NO MATCH
       </motion.div>
@@ -64,7 +64,7 @@ export function SwipeCard({ card, onResolved }: Props) {
           type="button"
           onClick={() => resolve("left")}
           aria-label="No match"
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-unicorn-blue text-2xl text-white shadow-card transition hover:brightness-110 active:scale-95"
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-error text-2xl text-white shadow-card transition hover:brightness-110 active:scale-95"
         >
           ✕
         </button>
