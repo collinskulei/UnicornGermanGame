@@ -12,18 +12,16 @@ import type { User } from "@supabase/supabase-js";
 import { createClient } from "@/lib/supabase/client";
 import type { PlayerProfile } from "@/types";
 
-export type ContinueResult =
-  | { status: "signed_in" }
-  | { status: "check_email" }
-  | { status: "error"; message: string };
+export type MagicLinkResult = { status: "sent" } | { status: "error"; message: string };
 
 interface AuthContextValue {
   user: User | null;
   profile: PlayerProfile | null;
   loading: boolean;
-  continueWithEmailPhone: (email: string, phone: string) => Promise<ContinueResult>;
+  sendMagicLink: (email: string) => Promise<MagicLinkResult>;
   signOut: () => Promise<void>;
   refreshProfile: () => Promise<void>;
+  updateUsername: (username: string) => Promise<{ error?: string }>;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -82,44 +80,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     };
   }, [supabase, fetchProfile]);
 
-  // No real "password" here — the player's phone number stands in for
-  // one, so returning players never have to remember a separate secret.
-  // We try signing in first; "invalid credentials" on an unseen email
-  // means it's a new player, so we fall back to creating the account.
-  const continueWithEmailPhone = useCallback(
-    async (email: string, phone: string): Promise<ContinueResult> => {
+  // One call handles both signup and login: Supabase creates the account
+  // automatically on first use (shouldCreateUser) and always emails the
+  // same magic link either way — no password, no separate signup step.
+  const sendMagicLink = useCallback(
+    async (email: string): Promise<MagicLinkResult> => {
       const normalizedEmail = email.trim().toLowerCase();
-      const normalizedPhone = phone.replace(/\s+/g, "");
-
-      const { error: signInError } = await supabase.auth.signInWithPassword({
+      const { error } = await supabase.auth.signInWithOtp({
         email: normalizedEmail,
-        password: normalizedPhone,
+        options: {
+          shouldCreateUser: true,
+          emailRedirectTo: `${window.location.origin}/auth/callback`,
+        },
       });
-      if (!signInError) return { status: "signed_in" };
-
-      if (!signInError.message.toLowerCase().includes("invalid login credentials")) {
-        return { status: "error", message: signInError.message };
-      }
-
-      const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
-        email: normalizedEmail,
-        password: normalizedPhone,
-        options: { data: { phone: normalizedPhone } },
-      });
-      if (signUpError) return { status: "error", message: signUpError.message };
-
-      // Supabase returns an empty `identities` array when the email
-      // already belongs to a confirmed account — our phone number just
-      // didn't match theirs.
-      if (signUpData.user && signUpData.user.identities?.length === 0) {
-        return {
-          status: "error",
-          message: "That phone number doesn't match this email. Please try again.",
-        };
-      }
-
-      if (signUpData.session) return { status: "signed_in" };
-      return { status: "check_email" };
+      if (error) return { status: "error", message: error.message };
+      return { status: "sent" };
     },
     [supabase]
   );
@@ -132,9 +107,24 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (user) await fetchProfile(user.id);
   }, [user, fetchProfile]);
 
+  const updateUsername = useCallback(
+    async (username: string): Promise<{ error?: string }> => {
+      if (!user) return { error: "Not signed in." };
+      const trimmed = username.trim();
+      if (trimmed.length < 2 || trimmed.length > 24) {
+        return { error: "Username must be 2-24 characters." };
+      }
+      const { error } = await supabase.from("profiles").update({ username: trimmed }).eq("id", user.id);
+      if (error) return { error: error.message };
+      await fetchProfile(user.id);
+      return {};
+    },
+    [supabase, user, fetchProfile]
+  );
+
   const value = useMemo(
-    () => ({ user, profile, loading, continueWithEmailPhone, signOut, refreshProfile }),
-    [user, profile, loading, continueWithEmailPhone, signOut, refreshProfile]
+    () => ({ user, profile, loading, sendMagicLink, signOut, refreshProfile, updateUsername }),
+    [user, profile, loading, sendMagicLink, signOut, refreshProfile, updateUsername]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -6,6 +6,7 @@ import { useAuth } from "@/lib/auth/AuthContext";
 import { createClient } from "@/lib/supabase/client";
 import { AvatarBadge } from "@/components/ui/AvatarBadge";
 import { XPBar } from "@/components/ui/XPBar";
+import { UsernameEditor } from "@/components/profile/UsernameEditor";
 import { tierForXp } from "@/lib/tiers";
 import { ACHIEVEMENTS } from "@/lib/achievements";
 
@@ -34,7 +35,7 @@ export default function ProfilePage() {
       <section className="flex flex-col items-center gap-4 rounded-2xl bg-cloud p-6 text-center shadow-card sm:flex-row sm:text-left">
         <AvatarBadge tier={tier.id} size="lg" />
         <div className="flex-1">
-          <h1 className="text-h1 text-unicorn-blue">{profile.username}</h1>
+          <UsernameEditor username={profile.username} />
           <p className="mb-3 text-ink-soft">
             {tier.displayName} · {tier.cefr}
           </p>
