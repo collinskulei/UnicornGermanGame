@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { useAuth } from "@/lib/auth/AuthContext";
 import { AvatarBadge } from "@/components/ui/AvatarBadge";
+import { GuideMeButton } from "@/components/guide/GuideMeButton";
 import { tierForXp } from "@/lib/tiers";
 
 const NAV_LINKS = [
@@ -48,6 +49,7 @@ export function Navbar() {
 
         {profile && tier ? (
           <div className="flex items-center gap-3">
+            <GuideMeButton />
             <div className="hidden items-center gap-1 rounded-full bg-cloud px-3 py-1.5 shadow-card sm:flex">
               <span className="text-streak">🔥</span>
               <span className="font-display text-sm font-bold text-ink">{profile.currentStreak}</span>
